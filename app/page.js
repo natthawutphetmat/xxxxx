@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 
 import Image from 'next/image';
 import QRCode from 'qrcode.react'; 
-import PaymentPage from './PaymentPage'
+
 
 
 
@@ -66,7 +66,6 @@ export default function Home() {
   };
  return (
     <>
-      <PaymentPage/>
       <main id='box'>
 
         {data && data.map(ads => (
