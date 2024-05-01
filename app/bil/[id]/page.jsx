@@ -137,7 +137,7 @@ export default function Page({ params }) {
                 <h5>ธนาคารกสิกรไทย</h5>
                 <h6>น.ส เจริญ กายสิทธิ์</h6>
                 <h3>1761696374</h3>
-                {copySuccess && <p style={{ color: 'green' }}>คัดลอก '1761696374' แล้ว!</p>}
+                {copySuccess && <p style={{ color: 'green' }}>คัดลอก 1761696374 แล้ว!</p>}
                 <button className='mt-3' onClick={copyText}>Copy</button>
               </div>
             </div>

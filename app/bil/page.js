@@ -1,10 +1,8 @@
 "use client"
-
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import QRCode from 'qrcode.react';
-
-const generatePayload = require('promptpay-qr');
+import generatePayload from 'promptpay-qr'; // Adjust import statement
 
 export default function Page({ params }) {
   const id = params.id;
@@ -74,21 +72,15 @@ export default function Page({ params }) {
       <main id='box'>
         <div className="container">
           <div className="text-center mt-3">
-            <Image src='/img/favicon.ico' width={70} height={70} className='mt-5' />
+            <Image src='/img/favicon.ico' width={70} height={70} className='mt-5' alt="Favicon" />
             <p>@adsmanager 0956422872</p>
             <h6>ใบเสนอราคา แจ้งรายละเอียดบริการต่าง</h6>
           </div>
 
           <div className="mt-4 "></div>
-          <div class="d-flex justify-content-around">
-
-       
-
-          <h5>ลูกค้า : {data[0].namebil}</h5>
-          
-          <h6>  No. 2024{data[0].id}</h6>
-
-
+          <div className="d-flex justify-content-around">
+            <h5>ลูกค้า : {data[0].namebil}</h5>
+            <h6>  No. 2024{data[0].id}</h6>
           </div>
           <div className="linecut "></div>
           <div className="text-center mt-3">
@@ -104,18 +96,14 @@ export default function Page({ params }) {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td></td>
-                <td>{data[0].name}</td>
-                <td></td>
-                <td>{data[0].price}</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>{data[0].ads}</td>
-                <td></td>
-                <td>{data[0].ads_price}</td>
-              </tr>
+              {data.map((item, index) => (
+                <tr key={index}>
+                  <td></td>
+                  <td>{item.name}</td>
+                  <td></td>
+                  <td>{item.price}</td>
+                </tr>
+              ))}
               <tr>
                 <td></td>
                 <td></td>
@@ -127,23 +115,21 @@ export default function Page({ params }) {
           <div className="linecut"></div>
           <div className="a">
             <div className="b">
-              <img src="/img/p.png" width={200} alt="" />
-             <QRCode value={qrCode} style={{ width: 200, height: 200 }} />
-
+              <img src="/img/p.png" width={200} alt="Placeholder" />
+              <QRCode value={qrCode} style={{ width: 200, height: 200 }} />
             </div>
             <div className="c">
               <div className="text-center">
-                <Image src="/img/b.jpg" width={80} height={80} className='mt-3' />
+                <Image src="/img/b.jpg" width={80} height={80} className='mt-3' alt="Bank Logo" />
                 <h5>ธนาคารกสิกรไทย</h5>
                 <h6>น.ส เจริญ กายสิทธิ์</h6>
                 <h3>1761696374</h3>
-                {copySuccess && <p style={{ color: 'green' }}>คัดลอก '1761696374' แล้ว!</p>}
+                {copySuccess && <p style={{ color: 'green' }}>คัดลอก 1761696374 แล้ว!</p>}
                 <button className='mt-3' onClick={copyText}>Copy</button>
               </div>
             </div>
           </div>
         </div>
-       
       </main>
     </>
   );
