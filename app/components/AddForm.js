@@ -60,33 +60,68 @@ export default function AddData() {
     <div>
       <main>
         <div className="container">
-          <div className="text-center mt-3">
-            <Image src='/img/favicon.ico' width={70} height={70} className='mt-5' />
-            <h6>เพิ่มข้อมูล</h6>
-          </div>
+        
           <form onSubmit={handleSubmit}>
-            <div className="mb-3">
-              <label htmlFor="namebil" className="form-label">ชื่อบิล</label>
-              <input type="text" className="form-control" id="namebil" name="namebil" value={formData.namebil} onChange={handleChange} required />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="name" className="form-label">ชื่อสินค้า</label>
-              <input type="text" className="form-control" id="name" name="name" value={formData.name} onChange={handleChange} required />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="price" className="form-label">ราคาสินค้า</label>
-              <input type="number" className="form-control" id="price" name="price" value={formData.price} onChange={handleChange} required />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="ads" className="form-label">ประเภทโฆษณา</label>
-              <input type="text" className="form-control" id="ads" name="ads" value={formData.ads} onChange={handleChange} required />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="ads_price" className="form-label">ราคาโฆษณา</label>
-              <input type="number" className="form-control" id="ads_price" name="ads_price" value={formData.ads_price} onChange={handleChange} required />
-            </div>
+          
+          <div class="row">
+             <div class="col">
+             <br/> <input type="text" className="form-control" list="datalistOptions" id="name" name="name" value={formData.name} onChange={handleChange} required placeholder="รายการ" />
+                    </div>
+                   
+              <div class="col-md-3">
+              <br/> <input type="number" className="form-control" id="price" name="price" value={formData.price} onChange={handleChange} required placeholder="ราคา" />
+              </div>
+                 </div>
+                 <br/>
+                 <hr/>
+                 <br/>
+                 
+                 <div class="row">
+                <div class="col">
+                <br/> <input type="text" className="form-control" list="datalistOptionss" id="ads" name="ads" value={formData.ads} onChange={handleChange} required placeholder="ค่าโฆษณา" />
+
+                </div>
+                <div class="col-md-3">
+                <br/> <input type="number" className="form-control" id="ads_price" name="ads_price" value={formData.ads_price} onChange={handleChange} required placeholder="ราคา" />
+
+                </div>
+              </div>
+         
+                 <hr/>
+             
+              <div class="col-md-4">
+              <br/> <input type="text" className="form-control" id="namebil" name="namebil" value={formData.namebil} onChange={handleChange} required placeholder="ชื่อลูกค้า" />
+              </div>
+
+              <br/><br/>
             <button type="submit" className="btn btn-primary">Submit</button>
-          </form>
+               
+       
+         
+            </form>
+
+                  <datalist id="datalistOptions">
+                        <option value="คอร์สเรียนทำโฆษณาออนไลน์ Google Ads สายเทา"/>
+                        <option value="คอร์สเรียนทำโฆษณาออนไลน์ facebook Ads สายเทา"/>
+                        <option value="บริการทำโฆษณา Google Ads สายเทา รายเดือน"/>
+                        <option value="บริการทำโฆษณา facebook Ads สายเทา รายเดือน"/>
+                        <option value="บัญชีโฆษณา Google Ads คีย์เทา อุธรแล้ว"/>
+                    </datalist>
+
+                    <datalist id="datalistOptionss">
+                        <option value="ค่าโฆษณาที่ต้องจ่ายให้กับ Google (งบยิง)    วัน x    บาท"/>
+                        <option value="ค่าโฆษณาที่ต้องจ่ายให้กับ facebook (งบยิง)     วัน x     บาท"/>
+                    </datalist>
+
+
+
+
+
+
+
+
+
+
         </div>
       </main>
     </div>
