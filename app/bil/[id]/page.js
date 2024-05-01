@@ -6,7 +6,7 @@ import QRCode from 'qrcode.react';
 
 const generatePayload = require('promptpay-qr');
 
-export default function Page({ params }) {
+export default function Pageid({ params }) {
   const id = params.id;
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
