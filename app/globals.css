@@ -12,18 +12,19 @@
 
 .a {
   display: flex;
-  border: solid;
 
 }
 .b {
   height: 300px;
-  border: solid red;
+
   width: 50%;
+  text-align: center;
+  align-items: center;
 
 }
 .c {
   width: 50%;
-  border: solid red;
+
 }
 
 
@@ -45,6 +46,8 @@
   }
   .c {
     width: 100%;
+    margin-top: 80px;
+    margin-bottom: 100px;
   }
 
   
