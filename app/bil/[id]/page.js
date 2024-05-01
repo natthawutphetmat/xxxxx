@@ -1,5 +1,5 @@
 "use client"
-
+import Head from 'next/head';
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import QRCode from 'qrcode.react';
@@ -54,7 +54,14 @@ export default function Pageid({ params }) {
   }, [phoneNumber, totalPrice]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>Loading...
+         <Head>
+        <title>หน้าใบแจ้งราคา</title>
+        <meta name="description" content="แสดงรายละเอียดบริการและสร้างรหัส QR สำหรับการชำระเงิน" />
+      </Head>
+
+
+    </div>;
   }
 
   if (!data) {
@@ -71,6 +78,15 @@ export default function Pageid({ params }) {
 
   return (
     <>
+     <head>
+        <title>หน้าใบแจ้งราคา</title>
+        <meta name="description" content={`ใบเสนอราคา แจ้งรายละเอียดบริการต่าง ลูกค้า K.${data[0].namebil}`} />
+        <meta property="og:title" content="หน้าใบแจ้งราคา" />
+        <meta property="og:description" content={`ใบเสนอราคา แจ้งรายละเอียดบริการต่าง ลูกค้า K.${data[0].namebil}`} />
+        <meta property="og:image" content="/img/favicon.ico" />
+        <meta property="og:url" content="https://bils.adsdep.com/" />
+        <meta property="og:type" content="website" />
+      </head>
       <main id='box'>
         <div className="container">
           <div className="text-center mt-3">
