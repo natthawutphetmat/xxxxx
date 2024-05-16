@@ -5,9 +5,10 @@
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
 }
 
-.linecut {
+#cut {
   background: url('/img/linecut.gif');
   height: 3px;
+  width: 100%;
 }
 
 .a {
@@ -36,6 +37,16 @@
 }
 
 
+
+button {
+  margin-top: 10px;
+}
+
+.table {
+
+  width: 100%;
+
+}
 
 
 
