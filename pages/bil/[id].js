@@ -32,9 +32,17 @@ export default function  Iduser() {
 
 
 
-  const copyText = () => {
-    setCopySuccess(true);
+  const copyText = (text) => {
+    navigator.clipboard.writeText(text)
+      .then(() => {
+        setCopySuccess(true); // อัพเดตสถานะการคัดลอกเมื่อสำเร็จ
+        console.log('Text copied successfully!');
+      })
+      .catch(err => {
+        console.error('Failed to copy text: ', err); // จัดการข้อผิดพลาดหากมี
+      });
   };
+  
 
 
   if (!data || data.length === 0) {
